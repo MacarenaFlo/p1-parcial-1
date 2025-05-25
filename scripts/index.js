@@ -8,6 +8,10 @@
  * Llamada desde un boton. Pide los datos para un disco.
  */
 function cargar() {
+
+    Disco.idValido(); //TODO: MANDAR PARAMETRO DE ID
+
+
     // TODO:
 }
 
