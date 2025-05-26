@@ -37,7 +37,7 @@ main {
 body {
     background-color: #000000;
     color: #000000;
-    background-image: url("/styles/img/fondonuevo.jpg");
+    background-image: url("/p1-parcial-1/styles/img/fondonuevo.jpg");
     background-size: contain;
     background-attachment: fixed;
     background-repeat:no-repeat;
