@@ -60,13 +60,27 @@ const pedirPistas = function () {
 };
 
 const cantidadPistasDisco = function () {
+  return pistas.length;
 }
 
 const duracionTotalDisco = function () {
+  let duracionTotal = 0;
+  this.pistas.forEach((pista) => {
+    duracionTotal += pista.duracion;
+  });
+  return duracionTotal;
 }
 
 const promedioDuracionPistasDisco = function () {
+  return this.duracionTotalDisco() / this.cantidadPistasDisco();
 }
 
 const pistaMasLargaDisco = function () {
+  let pistaMayor = new Pista("", -1);
+  this.pistas.forEach((pista) => {
+    if (pista.duracion > pistaMayor.duracion) {
+      pistaMayor = pista;
+    }
+  } )
+  return pistaMayor;
 }
