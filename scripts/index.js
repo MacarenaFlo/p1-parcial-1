@@ -69,6 +69,40 @@ function mostrar() {
 	cantidadDiscos();
 }
 
+const pedirTexto = function (msg) {
+    let str;
+    let strValido = false;
+
+    do {
+        str = prompt(msg);
+        if (str === null) {
+            alert("dato obligatorio, por favor intentelo nuevamente");
+        } else if (str.trim() === "") {
+            alert("no puede dejar el campo vacio, intentelo nuevamente");
+        } else if (!isNaN(str)) {
+            alert("El dato ingresado no puede ser un numero");
+        } else {
+            strValido = true;
+        }
+    } while (!strValido);
+    return str;
+};
+
+const pedirNumero = function (msg) {
+    let num;
+    let numValido = false;
+
+    do {
+        num = parseInt(prompt(msg));
+        if (isNaN(num)) {
+            alert("el dato ingresado no es valido, intentelo nuevamente");
+        } else {
+            numValido = true;
+        }
+    } while (!numValido);
+    return num;
+};
+
 function cantidadDiscos() {
 	const div = document.getElementById("cantidadDiscos");
 	div.textContent = "Cantidad de discos: " + discos.length;
@@ -77,3 +111,7 @@ function cantidadDiscos() {
 //function mostrarDisco(id){
 //
 //}
+
+//const pistaMasLargaTotal = function () {
+//}
+
