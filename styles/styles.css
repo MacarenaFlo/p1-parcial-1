@@ -51,7 +51,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2em;
+    padding: 1em;
 }
 
 /** Encabezados */
@@ -211,12 +211,11 @@ main hr {
 
 /** Footer */
 footer {
-    
     position: fixed;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    margin-left: 15rem;
     padding: 2em;
     color: #e100ff;
    

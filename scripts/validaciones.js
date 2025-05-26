@@ -73,7 +73,7 @@ const pedirId = function () {
 const pedirCancion = function() {
     const pista = validarString("Ingrese el nombre de la cancion");
     return pista;
-}
+};
 
 
 
@@ -82,12 +82,14 @@ const pedirDuracion = function () {
     let valido = true;
 
     do {
+        
         duracion = validarNumero("Ingrese la duracion de la pista en segundos");
         if (isNaN(duracion) || duracion < 0 || duracion >= 7200) {
             valido = false;
         } else {
             valido = true;
         }
-    } while (!valido);
+    } while(!valido);
     return duracion;
 };
+

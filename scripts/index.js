@@ -1,17 +1,14 @@
 'use strict';
-let discos = [];
+const discos = [];
 
 
 
-fetch("discos.json")
+fetch("/discos.json")
 .then(response => response.json())
 .then(json => {
     discos = json.map(disco => new disco(disco.nombre, disco.artista, disco.id, disco.portada, disco.portada));
-    mostrarDiscos();
+    mostrar();
 })
-
-
-
 
 
 function cargar() {
@@ -21,7 +18,7 @@ function cargar() {
     const id = pedirId();
     const pista = pedirCancion();
     const duracion = pedirDuracion();
-}
+
 let disco = {
     nombreDelDisco: nombreDelDisco,
     banda: banda,
@@ -33,13 +30,19 @@ let disco = {
 
 discos.push(disco);
 
+mostrarDiscos(); 
+}
+
+
 
 /**
  * Llamada desde un boton. Muestra todos los discos disponibles.
  */
 function mostrar() {
-
-
-    
+        const divDiscos = document.querySelector("#discos");
+  divDiscos.innerHTML = "";
+  discos.forEach(disco => divDiscos.innerHTML += disco.toHTML());
 }
+    
+
 
