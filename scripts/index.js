@@ -41,7 +41,7 @@ function mostrar() {
 
 	discos.forEach((disco) => {
 		const discoDiv = document.createElement("div");
-        const pistaMasLarga = disco.pistaMasLargaDisco();
+		const pistaMasLarga = disco.pistaMasLargaDisco();
 		discoDiv.className = "disco";
 		// Mostrar pistas como lista
 		let pistasHtml = "";
@@ -51,13 +51,13 @@ function mostrar() {
 				const minutos = Math.floor(pista.duracion / 60);
 				const segundos = pista.duracion % 60;
 				const duracionFormateada = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
-                let color = "white";
-                if (pista.duracion > 7200) {
-                    color = "#e62dffbd"; // Color para pistas mayores a 2 horas
-                }
-                if (pista.duracion = pistaMasLarga.duracion) {
-                    color = "red"; // Color para la pista más larga
-                }
+				let color = "white";
+				if (pista.duracion > 7200) {
+					color = "#e62dffbd"; // Color para pistas mayores a 2 horas
+				}
+				if (pista.duracion == pistaMasLarga.duracion) {
+					color = "red"; // Color para la pista más larga
+				}
 				pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 			});
 			pistasHtml += "</ul>";
@@ -66,8 +66,8 @@ function mostrar() {
             <p>Nombre: ${disco.nombre}</p>
             <p>Artista: ${disco.artista}</p>
             <p>Cantidad de pistas: ${disco.cantidadPistasDisco()}</p>
-            <p>Duración total: ${Math.floor(disco.duracionTotalDisco() / 60)}:${(disco.duracionTotalDisco() % 60).toString().padStart(2, "0")}</p>
-            <p>Promedio duración pistas: ${Math.floor(disco.promedioDuracionPistasDisco() / 60)}:${(disco.promedioDuracionPistasDisco() % 60).toString().padStart(2, "0")}</p>
+            <p>Duración total: ${Math.floor(disco.duracionTotalDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.duracionTotalDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.duracionTotalDisco() % 60).toString().padStart(2, "0")}</p>
+            <p>Promedio duración pistas: ${Math.floor(disco.promedioDuracionPistasDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.promedioDuracionPistasDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.promedioDuracionPistasDisco() % 60).toString().padStart(2, "0")}</p>
             <p>Pista más larga: ${pistaMasLarga.nombre} (${Math.floor(pistaMasLarga.duracion / 60)}:${(pistaMasLarga.duracion % 60).toString().padStart(2, "0")})</p>
             <p>ID: ${disco.id}</p>
             <p>Portada:</p>
@@ -78,7 +78,7 @@ function mostrar() {
 		div.appendChild(discoDiv);
 	});
 	cantidadDiscos();
-    pistaMasLargaTotal();
+	pistaMasLargaTotal();
 }
 
 const pedirTexto = function (msg) {
@@ -122,15 +122,15 @@ function cantidadDiscos() {
 
 function mostrarDisco() {
 	const id = pedirNumero("Ingrese el ID del disco que desea mostrar");
-    let discoEncontrado = false;
+	let discoEncontrado = false;
 	const div = document.querySelector("#discos");
 	div.innerHTML = "";
 	discos.forEach((disco) => {
 		if (disco.id === id) {
-            discoEncontrado = true;
+			const pistaMasLarga = disco.pistaMasLargaDisco();
+			discoEncontrado = true;
 			const discoDiv = document.createElement("div");
 			discoDiv.className = "disco";
-			// Mostrar pistas como lista
 			let pistasHtml = "";
 			if (Array.isArray(disco.pistas)) {
 				pistasHtml = "<ul>";
@@ -138,7 +138,13 @@ function mostrarDisco() {
 					const minutos = Math.floor(pista.duracion / 60);
 					const segundos = pista.duracion % 60;
 					const duracionFormateada = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
-					const color = pista.duracion > 180 ? " #e62dffbd;" : "white";
+					let color = "white";
+					if (pista.duracion > 7200) {
+						color = "#e62dffbd"; // Color para pistas mayores a 2 horas
+					}
+					if (pista.duracion == pistaMasLarga.duracion) {
+						color = "red"; // Color para la pista más larga
+					}
 					pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 				});
 				pistasHtml += "</ul>";
@@ -146,6 +152,10 @@ function mostrarDisco() {
 			discoDiv.innerHTML = `
                 <p>Nombre: ${disco.nombre}</p>
                 <p>Artista: ${disco.artista}</p>
+                <p>Cantidad de pistas: ${disco.cantidadPistasDisco()}</p>
+                <p>Duración total: ${Math.floor(disco.duracionTotalDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.duracionTotalDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.duracionTotalDisco() % 60).toString().padStart(2, "0")}</p>
+                <p>Promedio duración pistas: ${Math.floor(disco.promedioDuracionPistasDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.promedioDuracionPistasDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.promedioDuracionPistasDisco() % 60).toString().padStart(2, "0")}</p>
+                <p>Pista más larga: ${pistaMasLarga.nombre} (${Math.floor(pistaMasLarga.duracion / 60)}:${(pistaMasLarga.duracion % 60).toString().padStart(2, "0")})</p>
                 <p>ID: ${disco.id}</p>
                 <p>Portada:</p>
                 <img src="${disco.portada}" alt="${disco.nombre}" style="max-width: 200px;">
@@ -153,23 +163,23 @@ function mostrarDisco() {
                 ${pistasHtml}
             `;
 			div.appendChild(discoDiv);
-            return;
+			return;
 		}
 	});
-    if (!discoEncontrado){
-        alert("Disco no encontrado con ID: " + id);
-    }
+	if (!discoEncontrado) {
+		alert("Disco no encontrado con ID: " + id);
+	}
 }
 
 const pistaMasLargaTotal = function () {
-    const div = document.getElementById("pistaMasLarga");
-    let pistaMasLargaTotal =  new Pista("", -1);
-    discos.forEach((disco) => {
-        let pistaMasLargaDisco = disco.pistaMasLargaDisco();
-        if(pistaMasLargaTotal.duracion < pistaMasLargaDisco.duracion) {
-            pistaMasLargaTotal = pistaMasLargaDisco;
-        }
-    })
-    div.innerHTML = "";
-    div.textContent = `La pista más larga de todos los discos es: ${pistaMasLargaTotal.nombre} con una duración de ${Math.floor(pistaMasLargaTotal.duracion / 60)}:${(pistaMasLargaTotal.duracion % 60).toString().padStart(2, "0")}`;
-}
+	const div = document.getElementById("pistaMasLarga");
+	let pistaMasLargaTotal = new Pista("", -1);
+	discos.forEach((disco) => {
+		let pistaMasLargaDisco = disco.pistaMasLargaDisco();
+		if (pistaMasLargaTotal.duracion < pistaMasLargaDisco.duracion) {
+			pistaMasLargaTotal = pistaMasLargaDisco;
+		}
+	});
+	div.innerHTML = "";
+	div.textContent = `La pista más larga de todos los discos es: ${pistaMasLargaTotal.nombre} con una duración de ${Math.floor(pistaMasLargaTotal.duracion / 60)}:${(pistaMasLargaTotal.duracion % 60).toString().padStart(2, "0")}`;
+};
