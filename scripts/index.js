@@ -42,7 +42,7 @@ function mostrar() {
                 const minutos = Math.floor(pista.duracion / 60);
                 const segundos = pista.duracion % 60;
                 const duracionFormateada = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
-                const color = pista.duracion > 180 ? 'red' : 'white';
+                const color = pista.duracion > 180 ? ' #e62dffbd;' : 'white';
                 pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
             });
             pistasHtml += "</ul>";
@@ -65,3 +65,7 @@ function cantidadDiscos() {
     const div = document.getElementById('cantidadDiscos');
     div.textContent = "Cantidad de discos: " + discos.length;
 }
+
+//function mostrarDisco(id){
+//    
+//}

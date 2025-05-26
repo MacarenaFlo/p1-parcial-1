@@ -95,3 +95,19 @@ const pedirDuracionCancion = function () {
     } while (!valido);
     return duracion;
 };
+
+const cantidadPistasDisco = function () {
+}
+
+const duracionTotalDisco = function () {
+}
+
+const promedioDuracionPistasDisco = function () {
+}
+
+const pistaMasLargaDisco = function () {
+}
+
+const pistaMasLargaTotal = function () {
+}
+

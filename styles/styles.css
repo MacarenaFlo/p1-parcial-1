@@ -79,6 +79,20 @@ h2 {
     
 }
 
+#cantidadDiscos {
+    font-size: 2.4em;
+    line-height: 1.5;
+    text-align: center;
+    color: #e100ff;
+    padding: 0.5em;
+    border: 1px solid #2977a4;
+    width: 40%;
+    display: block;
+    margin: 1em auto;
+    text-shadow: #f595f5 2px 2px 3px;
+}
+
+
 /** Main */
 .botones {
     display:grid;
@@ -91,11 +105,46 @@ h2 {
     margin-top: 18rem;
 }
 
-main p {
+#discos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-clip: padding-box;
+ 
+    padding: 2em;
+    width: 100%;
+    border-top: thin solid rgba(255, 6, 255, 0.986);
+    border-bottom: thin solid rgba(255, 6, 255, 0.986);
+    margin-left: 2rem;
+    /* Línea de separación entre discos */
+}
+#discos > *:not(:last-child) {
+    border-bottom: 1px solid #fa22fa;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+#discos img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    align-items: flex-end;
+}
+#discos p {
+    
     font-size: 2.4em;
     line-height: 1.5;
+    text-shadow: #0090c9 2px 2px 3px;
+   margin-top: 1rem;
+}
+
+
+main p {
+    font-size: 2.4em;
+    line-height: 2.5;
     text-align: left;
-    color: #2977a4;
+    color: #20bdfc;
 }
 
 main p strong, 
@@ -112,16 +161,16 @@ main p em {
 }
 
 main ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     flex-direction: column;
-    align-items: flex-start;
-    align-items: flex-start;
+    gap: 1em;
     width: 100%;
 }
 
 main ul li {
     margin-left: 2em;
-    font-size: 2.4em;
+    font-size: 2.2em;
     line-height: 1.5;
     text-align: left;
     color: #1A4A5E;
@@ -151,6 +200,7 @@ main button {
     line-height: 1.5;
     text-align: center;
     color: #e100ff;
+    font-weight: 700;
 }
 
 main div.galeria {
@@ -211,12 +261,12 @@ main hr {
 
 /** Footer */
 footer {
-    position: fixed;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-left: 15rem;
-    padding: 2em;
+    padding: 1em;
     color: #e100ff;
    
 }
