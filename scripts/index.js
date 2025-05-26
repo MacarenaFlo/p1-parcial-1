@@ -2,7 +2,7 @@
 
 let discos = [];
 
-fetch("/discos.json")
+fetch("/p1-parcial-1/discos.json")
 	.then((response) => response.json())
 	.then((json) => {
 		json.forEach((disco) => {
