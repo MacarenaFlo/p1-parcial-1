@@ -26,14 +26,23 @@ html {
     padding: 0;
     font-size: 10px;
     line-height: 1;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+main {
+    max-width: 1200px;
+    margin: auto;
+}
 /** Body */
 body {
-    background-color: #2977a4;
-    color: #D0E0E3;
+    background-color: #000000;
+    color: #000000;
+    background-image: url("/styles/img/fondonuevo.jpg");
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-position: right;
+
 }
 
 /** Header */
@@ -48,26 +57,38 @@ header {
 /** Encabezados */
 h1,
 h2 {
-    font-family: 'Montserrat';
-    font-size: 3.6em;
+    
+    font-size: 2em;
     line-height: 1.5;
     font-weight: 700;
-    text-align: center;
+    text-align: right;
+    color: #fa22fa;
 }
 
 h2 {
-    font-size: 3em;
-    color: #2977a4;
+    
+    font-size: 7em;
+    text-align: right;
+    padding-top: 5rem;
+    padding-bottom: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+    
 }
 
 /** Main */
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 4em 2em;
-    background-color: #FFF;
+.botones {
+    display:grid;
+    grid-column: 1;
+    padding: 4em 2em;  
+    gap: 3rem;
+    grid-auto-flow: column;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 18rem;
 }
 
 main p {
@@ -124,12 +145,12 @@ main button {
     border: none;
     border-radius: .5em;
     padding: .25em .5em;
-    background: #2977a4;
+    background: #06c1fa;
     cursor: pointer;
     font-size: 2.4em;
     line-height: 1.5;
     text-align: center;
-    color: #D0E0E3;
+    color: #e100ff;
 }
 
 main div.galeria {
@@ -190,13 +211,15 @@ main hr {
 
 /** Footer */
 footer {
-    display: flex;
+    
+    position: fixed;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 2em;
-    
+    color: #e100ff;
+   
 }
 
 footer ul {
@@ -219,7 +242,7 @@ footer ul li a {
     font-family: 'Montserrat';
     font-size: 1em;
     text-decoration: none;
-    color: #D0E0E3;
+    color: #cf07f7;
 }
 
 footer ul li a:hover {
