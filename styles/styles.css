@@ -57,7 +57,7 @@ header {
 /** Encabezados */
 h1,
 h2 {
-    
+
     font-size: 2em;
     line-height: 1.5;
     font-weight: 700;
@@ -66,7 +66,7 @@ h2 {
 }
 
 h2 {
-    
+
     font-size: 7em;
     text-align: right;
     padding-top: 5rem;
@@ -76,7 +76,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     display: none;
-    
+
 }
 
 #cantidadDiscos {
@@ -85,11 +85,11 @@ h2 {
     text-align: center;
     color: #e100ff;
     padding: 0.5em;
-    border: 1px solid #2977a4;
+    border: 1px solid #2977a493;
     width: 40%;
     display: block;
     margin: 1em auto;
-    
+
 }
 
 #pistaMasLarga {
@@ -102,7 +102,7 @@ h2 {
     width: 40%;
     display: block;
     margin: 1em auto;
-    
+
 }
 
 
@@ -110,7 +110,7 @@ h2 {
 .botones {
     display:grid;
     grid-column: 1;
-    padding: 4em 2em;  
+    padding: 4em 2em;
     gap: 3rem;
     grid-auto-flow: column;
     max-width: 1200px;
@@ -123,7 +123,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     background-clip: padding-box;
- 
+
     padding: 2em;
     width: 100%;
     border-top: thin solid rgba(255, 6, 255, 0.986);
@@ -145,11 +145,10 @@ h2 {
     align-items: flex-end;
 }
 #discos p {
-    
     font-size: 2.4em;
     line-height: 1.5;
     text-shadow: #0090c9 2px 2px 3px;
-   margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 
@@ -160,7 +159,7 @@ main p {
     color: #20bdfc;
 }
 
-main p strong, 
+main p strong,
 main p em {
     font-size: 1em;
 }
@@ -207,7 +206,7 @@ main button {
     border: none;
     border-radius: .5em;
     padding: .25em .5em;
-    background: #06c1fa;
+    background: #0670fabd;
     cursor: pointer;
     font-size: 2.4em;
     line-height: 1.5;
@@ -281,7 +280,7 @@ footer {
     margin-left: 15rem;
     padding: 1em;
     color: #e100ff;
-   
+
 }
 
 footer ul {

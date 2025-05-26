@@ -57,16 +57,18 @@ const pedirId = function () {
 	let id;
 	let valido = true;
 	do {
+    valido = true;
 		id = pedirNumero("Ingrese el numero de identificacion del disco");
-		if (id < 1 || id > 999 || discos.some((disco) => disco.id === id)) {
+    if (id < 1 || id > 999) {
+      alert("El ID debe ser un número entre 1 y 999. Inténtelo nuevamente.");
+      valido = false;
+    } else if (discos.some((disco) => disco.id === id)) {
 			alert(
 				"El ID ya existe para el album " +
 					discos.find((disco) => disco.id === id).nombre +
 					". Por favor ingrese un ID diferente.",
 			);
 			valido = false;
-		} else {
-			valido = true;
 		}
 	} while (!valido);
 	return id;
