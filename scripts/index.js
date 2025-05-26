@@ -56,7 +56,7 @@ function mostrar() {
 					color = "#e62dffbd";
 				}
 				if (pista.duracion == pistaMasLarga.duracion) {
-					color = "red";
+					color = "purple";
 				}
 				pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 			});
@@ -143,7 +143,7 @@ function mostrarDisco() {
 						color = "#e62dffbd";
 					}
 					if (pista.duracion == pistaMasLarga.duracion) {
-						color = "red";
+						color = "purple";
 					}
 					pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 				});
