@@ -37,7 +37,7 @@ function cargar() {
 
 function mostrar() {
 	const div = document.querySelector("#discos");
-	div.innerHTML = ""; // Limpiar el contenido previo
+	div.innerHTML = "";
 
 	discos.forEach((disco) => {
 		const discoDiv = document.createElement("div");
@@ -51,12 +51,12 @@ function mostrar() {
 				const minutos = Math.floor(pista.duracion / 60);
 				const segundos = pista.duracion % 60;
 				const duracionFormateada = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
-				let color = "white";
+				let color = "f82dc1";
 				if (pista.duracion > 180) {
-					color = "#e62dffbd";
+					color = "#3e3ab1";
 				}
 				if (pista.duracion == pistaMasLarga.duracion) {
-					color = "purple";
+					color = "#e23dc6";
 				}
 				pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 			});
@@ -138,12 +138,12 @@ function mostrarDisco() {
 					const minutos = Math.floor(pista.duracion / 60);
 					const segundos = pista.duracion % 60;
 					const duracionFormateada = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
-					let color = "white";
+					let color = "#f82dc1";
 					if (pista.duracion > 180) {
-						color = "#e62dffbd";
+						color = "#3e3ab1";
 					}
 					if (pista.duracion == pistaMasLarga.duracion) {
-						color = "purple";
+						color = "#e23dc6";
 					}
 					pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 				});
