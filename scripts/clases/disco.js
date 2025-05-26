@@ -10,6 +10,32 @@ class Disco {
 	agregarPista(pista) {
 		this.pistas.push(pista);
 	}
+
+	cantidadPistasDisco() {
+		return this.pistas.length;
+	}
+
+	duracionTotalDisco() {
+		let duracionTotal = 0;
+		this.pistas.forEach((pista) => {
+			duracionTotal += pista.duracion;
+		});
+		return duracionTotal;
+	}
+
+	promedioDuracionPistasDisco() {
+		return this.duracionTotalDisco() / this.cantidadPistasDisco();
+	}
+
+	pistaMasLargaDisco() {
+		let pistaMayor = new Pista("", -1);
+		this.pistas.forEach((pista) => {
+			if (pista.duracion > pistaMayor.duracion) {
+				pistaMayor = pista;
+			}
+		});
+		return pistaMayor;
+	}
 }
 
 const pedirNombreDeDisco = function () {
@@ -58,29 +84,3 @@ const pedirPistas = function () {
 	}
 	return pistas;
 };
-
-const cantidadPistasDisco = function () {
-  return pistas.length;
-}
-
-const duracionTotalDisco = function () {
-  let duracionTotal = 0;
-  this.pistas.forEach((pista) => {
-    duracionTotal += pista.duracion;
-  });
-  return duracionTotal;
-}
-
-const promedioDuracionPistasDisco = function () {
-  return this.duracionTotalDisco() / this.cantidadPistasDisco();
-}
-
-const pistaMasLargaDisco = function () {
-  let pistaMayor = new Pista("", -1);
-  this.pistas.forEach((pista) => {
-    if (pista.duracion > pistaMayor.duracion) {
-      pistaMayor = pista;
-    }
-  } )
-  return pistaMayor;
-}

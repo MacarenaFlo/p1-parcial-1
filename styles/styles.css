@@ -92,6 +92,19 @@ h2 {
     text-shadow: #f595f5 2px 2px 3px;
 }
 
+#pistaMasLarga {
+    font-size: 2.4em;
+    line-height: 1.5;
+    text-align: center;
+    color: #e100ff;
+    padding: 0.5em;
+    border: 1px solid #2977a4;
+    width: 40%;
+    display: block;
+    margin: 1em auto;
+    text-shadow: #f595f5 2px 2px 3px;
+}
+
 
 /** Main */
 .botones {

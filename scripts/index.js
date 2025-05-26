@@ -67,6 +67,7 @@ function mostrar() {
 		div.appendChild(discoDiv);
 	});
 	cantidadDiscos();
+    pistaMasLargaTotal();
 }
 
 const pedirTexto = function (msg) {
@@ -112,7 +113,7 @@ function mostrarDisco() {
 	const id = pedirNumero("Ingrese el ID del disco que desea mostrar");
     let discoEncontrado = false;
 	const div = document.querySelector("#discos");
-	div.innerHTML = ""; // Limpiar el contenido previo
+	div.innerHTML = "";
 	discos.forEach((disco) => {
 		if (disco.id === id) {
             discoEncontrado = true;
@@ -150,6 +151,7 @@ function mostrarDisco() {
 }
 
 const pistaMasLargaTotal = function () {
+    const div = document.getElementById("pistaMasLarga");
     let pistaMasLargaTotal =  new Pista("", -1);
     discos.forEach((disco) => {
         let pistaMasLargaDisco = disco.pistaMasLargaDisco();
@@ -157,5 +159,6 @@ const pistaMasLargaTotal = function () {
             pistaMasLargaTotal = pistaMasLargaDisco;
         }
     })
-    return pistaMasLargaTotal;
+    div.innerHTML = "";
+    div.textContent = `La pista más larga de todos los discos es: ${pistaMasLargaTotal.nombre} con una duración de ${Math.floor(pistaMasLargaTotal.duracion / 60)}:${(pistaMasLargaTotal.duracion % 60).toString().padStart(2, "0")}`;
 }
