@@ -52,11 +52,11 @@ function mostrar() {
 				const segundos = pista.duracion % 60;
 				const duracionFormateada = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
 				let color = "white";
-				if (pista.duracion > 7200) {
-					color = "#e62dffbd"; // Color para pistas mayores a 2 horas
+				if (pista.duracion > 180) {
+					color = "#e62dffbd";
 				}
 				if (pista.duracion == pistaMasLarga.duracion) {
-					color = "red"; // Color para la pista más larga
+					color = "red";
 				}
 				pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 			});
@@ -67,7 +67,7 @@ function mostrar() {
             <p>Artista: ${disco.artista}</p>
             <p>Cantidad de pistas: ${disco.cantidadPistasDisco()}</p>
             <p>Duración total: ${Math.floor(disco.duracionTotalDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.duracionTotalDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.duracionTotalDisco() % 60).toString().padStart(2, "0")}</p>
-            <p>Promedio duración pistas: ${Math.floor(disco.promedioDuracionPistasDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.promedioDuracionPistasDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.promedioDuracionPistasDisco() % 60).toString().padStart(2, "0")}</p>
+            <p>Promedio duración pistas: ${Math.floor(disco.promedioDuracionPistasDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.promedioDuracionPistasDisco() % 3600) / 60).toString().padStart(2, "0")}:${Math.round(disco.promedioDuracionPistasDisco() % 60).toString().padStart(2, "0")}</p>
             <p>Pista más larga: ${pistaMasLarga.nombre} (${Math.floor(pistaMasLarga.duracion / 60)}:${(pistaMasLarga.duracion % 60).toString().padStart(2, "0")})</p>
             <p>ID: ${disco.id}</p>
             <p>Portada:</p>
@@ -139,11 +139,11 @@ function mostrarDisco() {
 					const segundos = pista.duracion % 60;
 					const duracionFormateada = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
 					let color = "white";
-					if (pista.duracion > 7200) {
-						color = "#e62dffbd"; // Color para pistas mayores a 2 horas
+					if (pista.duracion > 180) {
+						color = "#e62dffbd";
 					}
 					if (pista.duracion == pistaMasLarga.duracion) {
-						color = "red"; // Color para la pista más larga
+						color = "red";
 					}
 					pistasHtml += `<li style="color: ${color};">${pista.nombre} (${duracionFormateada})</li>`;
 				});
@@ -154,7 +154,7 @@ function mostrarDisco() {
                 <p>Artista: ${disco.artista}</p>
                 <p>Cantidad de pistas: ${disco.cantidadPistasDisco()}</p>
                 <p>Duración total: ${Math.floor(disco.duracionTotalDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.duracionTotalDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.duracionTotalDisco() % 60).toString().padStart(2, "0")}</p>
-                <p>Promedio duración pistas: ${Math.floor(disco.promedioDuracionPistasDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.promedioDuracionPistasDisco() % 3600) / 60).toString().padStart(2, "0")}:${(disco.promedioDuracionPistasDisco() % 60).toString().padStart(2, "0")}</p>
+                <p>Promedio duración pistas: ${Math.floor(disco.promedioDuracionPistasDisco() / 3600).toString().padStart(2, "0")}:${Math.floor((disco.promedioDuracionPistasDisco() % 3600) / 60).toString().padStart(2, "0")}:${Math.round(disco.promedioDuracionPistasDisco() % 60).toString().padStart(2, "0")}</p>
                 <p>Pista más larga: ${pistaMasLarga.nombre} (${Math.floor(pistaMasLarga.duracion / 60)}:${(pistaMasLarga.duracion % 60).toString().padStart(2, "0")})</p>
                 <p>ID: ${disco.id}</p>
                 <p>Portada:</p>
